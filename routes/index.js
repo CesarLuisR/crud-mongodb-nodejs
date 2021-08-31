@@ -1,16 +1,13 @@
 const { Router } = require("express");
 const router = Router();
-const Note = require("../models/Note");
+const indexController = require("../controllers/index");
 
-router.post("/", async (req, res) => {
-    await Note.create({ text: req.body.text });
-    res.send("Saved");
-});
+router.post("/", indexController.createDocument);
 
-router.get("/notes", async (req, res) => {
-    res.setHeader("Content-Type", "application/json");
-    const notes = await Note.find();
-    res.send(notes);
-});
+router.put("/:id", indexController.updateDocument);
+
+router.delete("/:id", indexController.deleteDocument);
+
+router.get("/notes", indexController.sendNotes);
 
 module.exports = router;

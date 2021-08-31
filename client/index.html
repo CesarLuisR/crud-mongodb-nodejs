@@ -4,15 +4,64 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
         <title>CRUD</title>
     </head>
     <body>
-        <form>
-            <h1>Add note</h1>
-            <input type="text" name="text" placeholder="Write note..." required />
-            <input type="submit" value="Enviar" />
-        </form>
-        <div class="note-container"></div>
+        <div
+            class="
+                app
+                flex flex-col
+                align-center
+                justify-center
+                w-1/2
+                m-auto
+                mt-20
+            "
+        >
+            <h1 class="title font-bold text-2xl mb-3">Add note</h1>
+            <form class="flex align-center justify-center">
+                <input
+                    class="
+                        shadow
+                        appearance-none
+                        border
+                        rounded
+                        w-full
+                        mr-1
+                        py-2
+                        px-3
+                        text-gray-700
+                        leading-tight
+                        focus:outline-none focus:shadow-outline
+                    "
+                    type="text"
+                    name="text"
+                    placeholder="Write note..."
+                    required
+                />
+                <input
+                    type="submit"
+                    value="Send"
+                    class="
+                        submit-btn
+                        bg-blue-500
+                        hover:bg-blue-700
+                        text-white
+                        font-bold
+                        py-2
+                        px-4
+                        rounded
+                        cursor-pointer
+                    "
+                />
+            </form>
+            <div class="note-container mt-10 w-full"></div>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
